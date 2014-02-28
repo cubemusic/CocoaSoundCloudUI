@@ -108,6 +108,9 @@
 
 - (void)dealloc;
 {
+    self.loginView.loginDelegate = nil;
+    self.loginView.delegate = nil;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [preparedURL release];
     [completionHandler release];
