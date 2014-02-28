@@ -66,8 +66,9 @@
         cloudImageView.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin);
         cloudImageView.image = [SCBundle imageWithName:@"orange_header_logo"];
         [cloudImageView sizeToFit];
+        float d = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 ? 0 : -0.6);
         cloudImageView.frame = CGRectMake(0,
-                                          -0.6,
+                                          d,
                                           CGRectGetWidth(cloudImageView.frame),
                                           CGRectGetHeight(cloudImageView.frame));
         [self addSubview:cloudImageView];

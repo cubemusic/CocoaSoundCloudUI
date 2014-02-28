@@ -137,8 +137,10 @@
 - (void)viewWillAppear:(BOOL)animated;
 {
     [super viewWillAppear:animated];
+    
+    int d = (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1 ? 20 : 0);
     SCConnectToSoundCloudTitleView *scTitleView = [[[SCConnectToSoundCloudTitleView alloc] initWithFrame:CGRectMake(0,
-                                                                                                                    0,
+                                                                                                                    d,
                                                                                                                     CGRectGetWidth(self.view.bounds),
                                                                                                                     44.0)] autorelease];
 
