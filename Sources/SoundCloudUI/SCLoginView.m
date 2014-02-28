@@ -230,13 +230,11 @@
 
     NSRange touLinkRange = [text.string rangeOfString:SCLocalizedString(@"terms_of_use_substring", nil)];
     NSAssert((touLinkRange.location != NSNotFound), @"Localisation of sign_in_tos_pp_body needs to contain substring");
-    [self.tosLabel addCustomLink:[NSURL URLWithString:kTermsOfServiceURL]
-                         inRange:touLinkRange];
+    [text setLink:[NSURL URLWithString:kTermsOfServiceURL] range:touLinkRange];
 
     NSRange ppLinkRange = [text.string rangeOfString:SCLocalizedString(@"privatcy_policy_substring", nil)];
     NSAssert((ppLinkRange.location != NSNotFound), @"Localisation of sign_in_tos_pp_body needs to contain substring");
-    [self.tosLabel addCustomLink:[NSURL URLWithString:kPrivacyPolicyURL]
-                         inRange:ppLinkRange];
+    [text setLink:[NSURL URLWithString:kPrivacyPolicyURL] range:ppLinkRange];
 
     [self addSubview:self.tosLabel];
 }
